@@ -1,0 +1,331 @@
+/*=== GERAL =================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: hsl(3, 72%, 31%);
+  --secundary-color: hsl(48.19, 100%, 49.8%);
+  --headline: hsl(210, 11%, 15%);
+  --paragraph: hsl(210, 9%, 31%);
+
+
+  --brand-light: white;
+
+  font-size: 62.5%; /* 1rem = 10px */
+
+  --nav-height: 7.2rem;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'DM Sans';
+  font-size: 1.6rem;
+
+  text-align: center;
+
+  overflow: overlay;
+}
+
+.wrapper {
+  width: 37.5rem;
+  margin-inline: auto;
+  padding-inline: 2.4rem;
+}
+
+ul {
+  list-style: none;
+}
+
+/*=== HEADER =================================*/
+header {
+  margin-top: calc(4.1rem + var(--nav-height));
+}
+
+header h4 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 1.6rem;
+}
+
+header h4 span {
+  color: var(--secundary-color);
+}
+
+header h1 {
+  font-size: 3.4rem;
+  color: var(--headline);
+  line-height: 130%;
+
+  margin-bottom: 2.4rem;
+}
+
+header .heart {
+  color: var(--primary-color);
+}
+
+header p {
+  font-size: 1.8rem;
+  line-height: 150%;
+  font-weight: 400;
+  color: var(--paragraph);
+
+  margin-bottom: 3.2rem;
+}
+
+header button {
+  background: var(--primary-color);
+
+  border: none;
+  border-radius: 4rem;
+
+  margin-bottom: 6rem;
+
+  height: 6.2rem;
+  width: 20.9rem;
+
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+/*=== NAVIGATION =================================*/
+nav {
+  display: flex;
+
+  height: var(--nav-height);
+
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav.scroll {
+  background: var(--primary-color);
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  transition: background 1s;
+}
+
+nav.scroll button path {
+  stroke: white;
+}
+
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*=== MENU-EXPANDED =================================*/
+body.menu-expanded {
+  overflow: hidden;
+}
+
+body.menu-expanded > :not(nav) {
+  display: none;
+}
+
+.menu,
+.close-menu,
+body.menu-expanded .open-menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-expanded .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--primary-color);
+
+  width: 100vw;
+  height: 100vh;
+
+  padding-top: var(--nav-height);
+}
+
+body.menu-expanded nav {
+  position: relative;
+}
+
+.menu ul:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+
+  margin-top: 6rem;
+
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu .button {
+  background: white;
+  border-radius: 4rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: var(--primary-color);
+
+  display: inline-block;
+  padding: 16px 32px;
+
+  margin-top: 4.8rem;
+  margin-bottom: 8rem;
+
+  
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
+body.menu-expanded .logo,
+body.menu-expanded button {
+  position: relative;
+  z-index: 100;
+}
+
+body.menu-expanded .logo path {
+  fill: white;
+}
+
+body.menu-expanded button path {
+  stroke: white;
+}
+
+/*=== MENU-PIZZA =================================*/
+
+main {
+  margin: 0 auto;
+  width: 24.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px;
+  height: 150%;
+  width: 100vw;
+}
+
+main .informations {
+  width: 24.3rem;
+  height: 15.971rem;
+}
+
+main .informations h2 {
+  font-size: 2.8rem;
+  color: var(--secundary-color);
+
+  height: 4.198rem;
+  line-height: 150%;
+}
+
+main .informations h3{
+  font-size: 2.4rem;
+  height: 11.774rem;;
+}
+
+main .boxs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32.7rem;
+  height: 64.6rem;
+  gap: 3.5rem;
+}
+
+.boxs a {
+  text-decoration: none;
+}
+
+.box {
+  padding: 2rem;
+  height: 20rem;
+  border: 1px solid #DBBEBD;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 0px #861B16;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.box .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1.6rem;
+  text-align: left;
+}
+
+.box .details h3 {
+  font-size: 2.6rem;
+  color: var(--headline);
+}
+
+.box .details h4 {
+  font-size: 2.0rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.box .details h4 span, .box .details p {
+  color: var(--headline);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.box img.pizza-grande {
+  width: 12rem;
+}
+.box img.pizza-media {
+  width: 10.28rem;
+}.box img.pizza-pequena {
+  width: 8.57rem;
+}
